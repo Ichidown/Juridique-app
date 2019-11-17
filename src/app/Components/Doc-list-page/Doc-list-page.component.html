@@ -1,0 +1,12 @@
+<mat-card style="margin:2em;">
+  <mat-action-list>
+    <h3 mat-subheader>E-Mails</h3>
+  
+    <mat-list-item (click)="onRowClicked(i)" *ngFor="let document of documentList; let i = index">
+      <mat-icon mat-list-icon>person</mat-icon>
+      <h4 mat-line> {{document.title}}</h4>
+      <p mat-line> 00-00-0000 </p>
+    </mat-list-item>
+    
+  </mat-action-list>
+</mat-card>

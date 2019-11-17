@@ -1,0 +1,38 @@
+<div>
+  <mat-toolbar color="primary" class="toolbar">
+    <mat-toolbar-row>
+        <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+        <h1 class="app-name">Responsive App</h1>
+        <span>Second Line</span>
+        <span class="spacer"></span>
+        
+        <button mat-flat-button style="color: rgb(77, 64, 221)" (click)= "LogOutEvent()">Deconnecter <mat-icon>forward</mat-icon> </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #snav [fixedInViewport]="mobileQuery.matches">
+      <mat-action-list>
+          <mat-list-item [routerLink]="['/']">
+            <mat-icon style="padding: 10px">folder</mat-icon>  Mes documents 
+          </mat-list-item>
+
+          <mat-list-item [routerLink]="[ { outlets: { pageRouter: ['docs'] } }]">
+              <mat-icon style="padding: 10px">add_box</mat-icon> Crée Document 
+          </mat-list-item>
+
+          <mat-list-item [routerLink]="[ { outlets: { pageRouter: ['groups'] } }]">
+            <mat-icon style="padding: 10px">people</mat-icon> Crée Groupe 
+          </mat-list-item>
+
+          <mat-list-item [routerLink]="[ { outlets: { pageRouter: ['accounts'] } }]">
+            <mat-icon style="padding: 10px">person_add</mat-icon> Crée Utilisateur 
+          </mat-list-item>
+      </mat-action-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

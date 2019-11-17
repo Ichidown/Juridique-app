@@ -1,0 +1,14 @@
+<mat-card style="margin:2em;">
+  <form class="form">
+      <mat-form-field style="width: 100%;">
+          <input #inputUserMail matInput placeholder="Nom Utilisateur">
+      </mat-form-field>
+      <mat-form-field style="width: 100%;">
+          <input #inputPassword matInput placeholder="Mot de passe" type="password">
+      </mat-form-field>
+  </form>
+
+  <button mat-raised-button color="primary" (click) = "requestAuth(inputUserMail.value,inputPassword.value)">
+    S'Identifier
+  </button>
+</mat-card>

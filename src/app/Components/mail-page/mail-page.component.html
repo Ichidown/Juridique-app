@@ -1,0 +1,65 @@
+
+<mat-card style="margin:2em;">
+    <form class="form">
+
+        <mat-form-field class="full-width">
+            <input #inputToEmail matInput placeholder="Emails destinataire :">
+        </mat-form-field>
+        
+
+        <mat-form-field class="full-width">
+          <input #inputTitle matInput placeholder="Titre du document :">
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <textarea #inputReference matInput placeholder="Référence officielle du document :"></textarea>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <textarea #inputOrigin matInput placeholder="Origine du document :"></textarea>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <textarea #inputRisks matInput placeholder="Risques et domaines concernés :"></textarea>
+        </mat-form-field>
+        
+        <mat-form-field class="full-width">
+          <textarea #inputResume matInput placeholder="Résumé technique :"></textarea>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <textarea #inputMesures matInput placeholder="Nouvelle mesure proposée :"></textarea>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <textarea #inputEstablishedBy matInput placeholder="Etabli par :"></textarea>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <input #inputNameResp matInput placeholder="Nom du Responsable de la structure Juridique :">
+        </mat-form-field>
+
+      
+        <mat-form-field class="full-width">
+          <input #inputDate matInput [matDatepicker]="picker" placeholder="Date édition">
+          <mat-datepicker-toggle matSuffix [for]="picker">
+            <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    </form>    
+    
+    <button mat-raised-button color="primary" 
+    (click) = "saveMailDocument(
+      inputTitle.value,
+      inputReference.value,
+      inputOrigin.value,
+      inputRisks.value,
+      inputResume.value,
+      inputMesures.value,
+      inputEstablishedBy.value,
+      inputNameResp.value,
+      inputDate.value)">
+      Envoyer
+    </button>
+</mat-card>
